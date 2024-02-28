@@ -28,3 +28,11 @@ export const formatCurrency = (value) =>
   new Intl.NumberFormat('en', { style: 'currency', currency: 'USD' }).format(
     value
   );
+
+// encoder for Url
+
+export const encodeForUrl = (text) =>
+  encodeURIComponent(text.replace(/\s+/g, '-'));
+
+export const decodeFromUrl = (text) =>
+  decodeURIComponent(text.replace(/-/g, ' '));
