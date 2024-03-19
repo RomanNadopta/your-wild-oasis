@@ -1,8 +1,9 @@
 import { useParams } from 'react-router-dom';
 import MainHeader from '../../ui/MainHeader';
 import { decodeFromUrl } from '../../../utils/helpers';
-import { cities } from '../../../data/data-explores';
+
 import styled from 'styled-components';
+import { useCities } from '../ExplorePage/useCities';
 
 const ImageWrapper = styled.div`
   img {
@@ -20,6 +21,8 @@ function HousesHeader() {
 
   const originalTitle = decodeFromUrl(location);
 
+  const { isLoading, cities } = useCities();
+  if (isLoading) return;
   const { secondImage } = cities.find((city) => city.name === originalTitle);
 
   return (

@@ -118,22 +118,6 @@ function AboutUsBody() {
                   </Page.Article>
                 </FactsContainer>
               )}
-              {/* 
-              <Page.Block>
-                <Page.CollageOfImages
-        image={secondArticle.image}
-        images={secondArticle.otherImages}
-        />
-                <Page.Article>
-                  <Page.Title>{secondArticle.title}</Page.Title>
-                  {secondArticle.article.map(
-            (paragraph, i) =>
-              paragraph && (
-                <Page.Paragraph key={i}>{paragraph.paragraph}</Page.Paragraph>
-              )
-          )}
-                </Page.Article>
-              </Page.Block> */}
               {item.ourMissionTitle && (
                 <OurMissionContainer>
                   <OurMission>

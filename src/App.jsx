@@ -52,6 +52,7 @@ function App() {
           <ScrollToTop />
           <Routes>
             <Route element={<FrontAppLayout />}>
+              <Route index element={<Navigate replace to='home' />} />
               <Route path='home' element={<Home />}></Route>
               <Route path='about' element={<About />}></Route>
               <Route path='leadership' element={<Leadership />}></Route>
@@ -59,7 +60,10 @@ function App() {
 
               <Route path='explore/:id' element={<Explore />}></Route>
               <Route path='/:location' element={<Houses />}></Route>
-              <Route path='/:location/:name' element={<House />}></Route>
+              <Route
+                path='/:location/:name/:arrival?/:departure?/:guests?/:pets?'
+                element={<House />}
+              ></Route>
             </Route>
             <Route
               element={
@@ -68,7 +72,6 @@ function App() {
                 </ProtectedRoute>
               }
             >
-              <Route index element={<Navigate replace to='dashboard' />} />
               <Route path='dashboard' element={<Dashboard />} />
 
               <Route path='bookings' element={<Bookings />} />

@@ -3,6 +3,7 @@ import { encodeForUrl } from '../../../utils/helpers';
 
 import { useHome } from './useHome';
 import { useCities } from '../ExplorePage/useCities';
+import { useCabins } from '../../../admin/features/cabins/useCabins';
 
 import Page from '../../ui/PageArticle';
 import Carousel from '../../ui/Carousel';
@@ -11,6 +12,7 @@ import Container from '../../ui/BodyContainer';
 import { ExploreButton } from '../../ui/ExploreButton';
 import Spinner from '../../../admin/ui/Spinner';
 import { useExplores } from '../ExplorePage/useExplores';
+import Search from '../../ui/Search';
 
 const BenefitsContainer = styled.section`
   font-family: 'Libre Baskerville';
@@ -44,12 +46,15 @@ function HomePageBody() {
   const { isLoading, home } = useHome();
   const { isLoading: cityLoading, cities } = useCities();
   const { isLoading: exploreLoading, explores } = useExplores();
+  const { isLoading: cabinsLoading, cabins } = useCabins();
 
-  if (isLoading || cityLoading || exploreLoading) return <Spinner />;
+  if (isLoading || cityLoading || exploreLoading || cabinsLoading)
+    return <Spinner />;
 
   const { benefits } = home.at(0);
   return (
     <Container>
+      <Search cities={cities} cabins={cabins} />
       <Page>
         {home.map(
           (item) =>

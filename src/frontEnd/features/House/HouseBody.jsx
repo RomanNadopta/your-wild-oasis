@@ -6,11 +6,14 @@ import { GoMoon } from 'react-icons/go';
 import { GiSittingDog } from 'react-icons/gi';
 
 import CarouselSlide from '../../ui/CarouselSlide';
-import { cabins } from '../../../data/data-cabins';
+
 import { decodeFromUrl } from '../../../utils/helpers';
 import BodyContainer from '../../ui/BodyContainer';
 import styled from 'styled-components';
 import PageHeading from '../../ui/PageHeading';
+import Markdown from 'react-markdown';
+import { useCabins } from '../../../admin/features/cabins/useCabins';
+import BookingForm from '../../ui/BookingForm';
 
 const Wrapper = styled.div`
   font-family: 'Libre Baskerville';
@@ -53,11 +56,14 @@ const HouseDescription = styled.div`
 function HouseBody() {
   const { name } = useParams();
   const originalname = decodeFromUrl(name);
+  const { isLoading, cabins } = useCabins();
+  if (isLoading) return;
   const house = cabins.find((cabin) => cabin.name === originalname);
 
   return (
     <BodyContainer>
-      <CarouselSlide data={house.images} />
+      <CarouselSlide data={house.images} alt={house.name} />
+      <BookingForm />
       <Wrapper>
         <HouseDetails>
           <HouseDetail>
@@ -81,9 +87,8 @@ function HouseBody() {
         </HouseDetails>
         <HouseDescription>
           <PageHeading as='h4'>{house.name}</PageHeading>
-          {house.description.map((paragraph, i) => (
-            <p key={i}>{paragraph.paragraph}</p>
-          ))}
+
+          <Markdown>{house.description}</Markdown>
         </HouseDescription>
       </Wrapper>
     </BodyContainer>

@@ -297,7 +297,7 @@ export const cabins = [
     maxCapacity: 2,
     kingBed: 1,
     bedrooms: 1,
-    bathroom: 2,
+    bathroom: 1,
     sleepComfortably: 2,
     pets: 0,
     regularPrice: 350,
@@ -581,7 +581,7 @@ export const cabins = [
         paragraph: `Offering a shared lounge and inner courtyard view, Beżowe Home is situated in Olsztyn, less than 1 km from Olsztyn Stadium and 3,4 km from Olsztyn Bus Station. This property offers access to a balcony, free private parking and free WiFi. The accommodation features a lift and a shared kitchen for guests.`,
       },
       {
-        paragraph: `he apartment with a terrace and city views has 2 bedrooms, a living room, a flat-screen TV, an equipped kitchenette with a dishwasher and an oven, and 1 bathroom with a walk-in shower. Towels and bed linen are offered in the apartment. The property has an outdoor dining area.`,
+        paragraph: `The apartment with a terrace and city views has 2 bedrooms, a living room, a flat-screen TV, an equipped kitchenette with a dishwasher and an oven, and 1 bathroom with a walk-in shower. Towels and bed linen are offered in the apartment. The property has an outdoor dining area.`,
       },
       {
         paragraph: `For guests with children, the apartment offers outdoor play equipment.`,

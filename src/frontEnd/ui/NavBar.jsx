@@ -38,11 +38,6 @@ const NavItem = styled.li`
   }
 `;
 
-// const Logo = styled.h1`
-//   font-size: 1.5rem;
-//   margin: 0;
-// `;
-
 const NavList = styled.ul`
   display: flex;
   flex-direction: column;
@@ -81,7 +76,8 @@ const MobileNavToggle = styled.button`
 
 function NavBar() {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
-  const { isActive } = useState(false);
+  const [isActive] = useState(false);
+
   return (
     <Nav>
       <MobileNavToggle onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}>

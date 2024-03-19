@@ -10,8 +10,7 @@ const StyledContainer = styled.div`
   line-height: 0;
   position: relative;
   min-height: 130px;
-  /* margin-bottom: 6rem; */
-  /* overflow: hidden; */
+
   background-color: hsl(240, 100%, 50%, 0.5);
   @media (min-width: 1200px) {
     min-height: 400px;
@@ -54,7 +53,7 @@ function MainHeader({ children }) {
 }
 
 function Image({ src }) {
-  return <StyledImage src={src} alt='sda' />;
+  return <StyledImage src={src} alt='hero' />;
 }
 
 function Title({ children }) {

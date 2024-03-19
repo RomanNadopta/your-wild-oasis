@@ -47,7 +47,7 @@ function CabinRow({ cabin }) {
     maxCapacity,
     regularPrice,
     discount,
-    image,
+    images,
     description,
   } = cabin;
 
@@ -57,14 +57,14 @@ function CabinRow({ cabin }) {
       maxCapacity,
       regularPrice,
       discount,
-      image,
+      images,
       description,
     });
   }
 
   return (
     <Table.Row>
-      <Img src={image} />
+      <Img src={images[0]} />
       <Cabin>{name}</Cabin>
       <div>Fits up to {maxCapacity} quests</div>
       <Price>{formatCurrency(regularPrice)}</Price>

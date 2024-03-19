@@ -1,4 +1,4 @@
-import HomePageHeader from '../features/HomePage/HomeHeader';
+import HomePageHeader from '../features/HomePage/HomePageHeader';
 import HomePageBody from '../features/HomePage/HomePageBody';
 
 function HomePage() {

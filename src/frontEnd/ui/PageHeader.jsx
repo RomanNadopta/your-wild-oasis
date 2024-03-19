@@ -10,8 +10,7 @@ const StyledContainer = styled.div`
   line-height: 0;
   position: relative;
   min-height: 140px;
-  /* margin-bottom: 6rem; */
-  /* overflow: hidden; */
+
   background-color: hsl(240, 100%, 50%, 0.5);
   @media (min-width: 1200px) {
     min-height: 300px;
@@ -24,14 +23,12 @@ const StyledHeader = styled.div`
   display: block;
   justify-content: center;
   @media (min-width: 900px) {
-    /* min-height: 400px; */
     display: flex;
   }
 `;
 
 const StyledImageWrapper = styled.div`
   @media (min-width: 900px) {
-    /* left: 20%; */
     margin-left: 60px;
     width: 31%;
     border-left: 10px solid white;
@@ -64,9 +61,9 @@ const StyledCollageImages = styled.div`
 
 const StyledTitleContainer = styled.div`
   line-height: 1.5;
-  /* margin: 3rem; */
+
   padding: 3rem;
-  /* max-width: 510px; */
+
   color: white;
   @media (min-width: 900px) {
     width: 40%;
@@ -75,19 +72,23 @@ const StyledTitleContainer = styled.div`
   }
   @media (min-width: 1200px) {
     margin: 0;
-    margin-top: 6rem;
+
     margin-left: 6rem;
   }
 `;
 
-// const TitleWrapper = styled.div`
-//   max-width: 510px;
-// `;
+const TitleWrapper = styled.div`
+  text-align: center;
+  @media (min-width: 900px) {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+`;
 
 const StyledTitle = styled.h1`
-  /* max-width: 510px; */
   font-size: 3rem;
-  /* padding: 160px 0; */
+
   hyphens: none;
   @media (min-width: 1200px) {
     font-size: 5rem;
@@ -97,7 +98,7 @@ const StyledTitle = styled.h1`
 const StyledSubtitle = styled.p`
   font-size: 1.4rem;
   margin-top: 1rem;
-  /* padding-bottom: 2rem; */
+
   hyphens: none;
   @media (min-width: 1200px) {
     font-size: 2rem;
@@ -129,7 +130,11 @@ function CoverImages({ image, images }) {
   );
 }
 function TitleContainer({ children }) {
-  return <StyledTitleContainer>{children}</StyledTitleContainer>;
+  return (
+    <StyledTitleContainer>
+      <TitleWrapper>{children}</TitleWrapper>
+    </StyledTitleContainer>
+  );
 }
 
 function Title({ children }) {

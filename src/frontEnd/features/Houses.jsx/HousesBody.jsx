@@ -13,8 +13,11 @@ import {
   encodeForUrl,
   formatCurrency,
 } from '../../../utils/helpers';
-import { cabins } from '../../../data/data-cabins';
-import { cities } from '../../../data/data-explores';
+// import { cabins } from '../../../data/data-cabins';
+
+import { useCabins } from '../../../admin/features/cabins/useCabins';
+import { useCities } from '../ExplorePage/useCities';
+import Search from '../../ui/Search';
 
 const commonTextStyle = css`
   @media (min-width: 1200px) {
@@ -142,7 +145,12 @@ function HousesBody() {
 
   const originalTitle = decodeFromUrl(location);
 
+  const { isLoading: cabinsLoading, cabins } = useCabins();
+  const { isLoading, cities } = useCities();
+  if (isLoading || cabinsLoading) return;
+
   const cabinsList = cabins.filter((cabin) => cabin.location === originalTitle);
+
   const city = cities.find((city) => city.name === originalTitle);
 
   return (

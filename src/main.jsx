@@ -4,6 +4,7 @@ import App from './App.jsx';
 import { ErrorBoundary } from 'react-error-boundary';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import 'react-datepicker/dist/react-datepicker.css';
 import ErrorFallback from './admin/ui/ErrorFallback.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(

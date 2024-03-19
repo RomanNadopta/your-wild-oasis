@@ -8,11 +8,14 @@ const Wrapper = styled.div`
   margin: 0 auto;
   @media (min-width: 1200px) {
     width: 1000px;
-    min-height: 100vh;
   }
 
   .slick-slide > div {
     margin: 0;
+  }
+
+  .slick-arrow {
+    display: none !important;
   }
 
   .slick-dots {
@@ -76,10 +79,10 @@ const ImageItem = styled.div`
   cursor: grab;
 `;
 
-function CarouselSlide({ data }) {
+function CarouselSlide({ data, alt }) {
   const settings = {
     customPaging: function (i) {
-      return <PagingImg key={i} src={data[i]} alt='winter' />;
+      return <PagingImg key={i} src={data[i]} alt={alt} />;
     },
     dots: true,
     dotsClass: 'slick-dots slick-thumb',

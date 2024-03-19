@@ -1,13 +1,7 @@
 import PageHeader from '../../ui/PageHeader';
-import { aboutUs } from '../../../data/data-about-us';
-import styled from 'styled-components';
+
 import { useAboutUs } from './useAboutUs';
 
-const Title = styled.div`
-  position: relative;
-  top: 30%;
-  text-align: center;
-`;
 function AboutUsHeader() {
   const { isLoading, aboutUs } = useAboutUs();
   if (isLoading) return;
@@ -20,9 +14,7 @@ function AboutUsHeader() {
       <PageHeader>
         <PageHeader.CoverImages image={image} images={collageOfImages} />
         <PageHeader.TitleContainer>
-          <Title>
-            <PageHeader.Title>{title}</PageHeader.Title>
-          </Title>
+          <PageHeader.Title>{title}</PageHeader.Title>
         </PageHeader.TitleContainer>
       </PageHeader>
     </div>
