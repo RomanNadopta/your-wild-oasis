@@ -449,14 +449,14 @@ function BookingForm() {
   const ref = useOutsideClick(setIsOpen, false);
 
   useEffect(() => {
-    const arrivalDate = parse(searchQuery.arrival, 'MM-dd-yyyy', new Date());
-    const departureDate = parse(
-      searchQuery.departure,
-      'MM-dd-yyyy',
-      new Date()
-    );
-
     if (searchParams.size !== 0) {
+      const arrivalDate = parse(searchQuery.arrival, 'MM-dd-yyyy', new Date());
+      const departureDate = parse(
+        searchQuery.departure,
+        'MM-dd-yyyy',
+        new Date()
+      );
+
       setGuestQuery(searchQuery.guests);
       setPetQuery(searchQuery.pets);
 
@@ -509,7 +509,7 @@ function BookingForm() {
       const searchUrl = `/${encodeForUrl(houseLocation)}/${encodeForUrl(
         houseName
       )}/search?${queryString}`;
-      navigate(searchUrl);
+      window.history.replaceState(null, '', searchUrl);
     }
   }, [
     startDate,

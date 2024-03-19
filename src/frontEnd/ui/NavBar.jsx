@@ -17,9 +17,6 @@ const Nav = styled.nav`
 const NavItem = styled.li`
   list-style: none;
   margin: 0 1rem;
-  &:hover {
-    background-color: rgb(240, 240, 240, 0.6);
-  }
 
   a {
     display: block;
@@ -43,6 +40,14 @@ const NavList = styled.ul`
   flex-direction: column;
   display: ${(props) => (props.$isMobile ? 'flex' : 'none')};
   margin: 0 auto;
+  position: absolute;
+
+  @media (max-width: 1131px) {
+    background-color: var(--color-grey-50);
+    z-index: 3;
+    left: 0;
+    width: 100%;
+  }
 
   @media (min-width: 1132px) {
     display: flex;
