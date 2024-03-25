@@ -75,9 +75,7 @@ function App() {
             <Route
               element={
                 <Suspense>
-                  <ProtectedRoute>
-                    <FrontAppLayout />
-                  </ProtectedRoute>
+                  <FrontAppLayout />
                 </Suspense>
               }
             >
@@ -111,8 +109,8 @@ function App() {
               <Route path='account' element={<Account />} />
               <Route path='settings' element={<Settings />} />
               <Route path='users' element={<Users />} />
-              <Route path='login' element={<Login />} />
             </Route>
+            <Route path='login' element={<Login />} />
             <Route path='*' element={<PageNotFound />} />
           </Routes>
         </BrowserRouter>
