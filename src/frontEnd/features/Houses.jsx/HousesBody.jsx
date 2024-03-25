@@ -17,7 +17,6 @@ import {
 
 import { useCabins } from '../../../admin/features/cabins/useCabins';
 import { useCities } from '../ExplorePage/useCities';
-import Search from '../../ui/Search';
 
 const commonTextStyle = css`
   @media (min-width: 1200px) {

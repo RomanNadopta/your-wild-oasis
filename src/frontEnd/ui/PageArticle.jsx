@@ -39,6 +39,7 @@ const Img = styled.img`
   object-fit: cover;
   object-position: center;
   filter: none;
+  width: 100%;
 `;
 
 const ArticleWrapper = styled.div`

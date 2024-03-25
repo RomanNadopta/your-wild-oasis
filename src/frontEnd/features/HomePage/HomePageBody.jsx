@@ -12,7 +12,7 @@ import Container from '../../ui/BodyContainer';
 import { ExploreButton } from '../../ui/ExploreButton';
 import Spinner from '../../../admin/ui/Spinner';
 import { useExplores } from '../ExplorePage/useExplores';
-import Search from '../../ui/Search';
+import SearchForm from '../../ui/SearchForm';
 
 const BenefitsContainer = styled.section`
   font-family: 'Libre Baskerville';
@@ -54,7 +54,7 @@ function HomePageBody() {
   const { benefits } = home.at(0);
   return (
     <Container>
-      <Search cities={cities} cabins={cabins} />
+      <SearchForm cities={cities} cabins={cabins} />
       <Page>
         {home.map(
           (item) =>

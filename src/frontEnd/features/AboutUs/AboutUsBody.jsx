@@ -4,8 +4,8 @@ import Container from '../../ui/BodyContainer';
 import PageHeading from '../../ui/PageHeading';
 import styled from 'styled-components';
 import { ExploreButton } from '../../ui/ExploreButton';
-import { cabins } from '../../../data/data-cabins';
-import { cities } from '../../../data/data-explores';
+import { useCabins } from '../../../admin/features/cabins/useCabins';
+import { useCities } from '../ExplorePage/useCities';
 import { useAboutUs } from './useAboutUs';
 
 const FactsContainer = styled.section`
@@ -52,12 +52,14 @@ const OurMission = styled.div`
 `;
 
 function AboutUsBody() {
-  const lengthOfCabins = cabins.length;
-  const LengthOfCities = cities.length;
-
+  const { isLoading: isLoadingCabins, cabins } = useCabins();
+  const { isLoading: isLoadingCities, cities } = useCities();
   const { isLoading, aboutUs } = useAboutUs();
 
-  if (isLoading) return;
+  if (isLoading || isLoadingCabins || isLoadingCities) return;
+
+  const lengthOfCabins = cabins.length;
+  const LengthOfCities = cities.length;
 
   const body = aboutUs.filter((about) => about.type === 'body');
 

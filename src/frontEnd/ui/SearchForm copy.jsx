@@ -429,7 +429,7 @@ const SubmitBtn = styled.button`
   }
 `;
 
-function Search({ cabins, cities }) {
+function SearchForm({ cabins, cities }) {
   const [searchParams] = useSearchParams();
   const [searchQuery, setSearchQuery] = useState('');
   const [filteredCities, setFilteredCities] = useState([]);
@@ -679,4 +679,4 @@ function Search({ cabins, cities }) {
   );
 }
 
-export default Search;
+export default SearchForm;
