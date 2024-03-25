@@ -20,7 +20,7 @@ import AppLayout from './admin/ui/AppLayout';
 import ProtectedRoute from './admin/ui/ProtectedRoute';
 import { DarkModeProvider } from './context/DarkModeContext';
 
-// import Home from './frontEnd/pages/Home';
+import Home from './frontEnd/pages/Home';
 import FrontAppLayout from './frontEnd/ui/FrontAppLayout';
 // import About from './frontEnd/pages/About';
 
@@ -33,9 +33,8 @@ import ScrollToTop from './frontEnd/ui/ScrollToTop';
 // import Privacy from './frontEnd/pages/Privacy';
 
 import { lazy, Suspense } from 'react';
-import Spinner from './admin/ui/Spinner';
 
-const Home = lazy(() => import('./frontEnd/pages/Home'));
+// const Home = lazy(() => import('./frontEnd/pages/Home'));
 const About = lazy(() => import('./frontEnd/pages/About'));
 const Leadership = lazy(() => import('./frontEnd/pages/Leadership'));
 const Privacy = lazy(() => import('./frontEnd/pages/Privacy'));
@@ -71,6 +70,8 @@ function App() {
         <BrowserRouter>
           <ScrollToTop />
           <Routes>
+            <Route index element={<Navigate replace to='home' />} />
+            <Route path='home' element={<Home />}></Route>
             <Route
               element={
                 <Suspense>
@@ -80,8 +81,6 @@ function App() {
                 </Suspense>
               }
             >
-              <Route index element={<Navigate replace to='home' />} />
-              <Route path='home' element={<Home />}></Route>
               <Route path='about' element={<About />}></Route>
               <Route path='leadership' element={<Leadership />}></Route>
               <Route path='/policies' element={<Privacy />}></Route>
@@ -95,7 +94,7 @@ function App() {
             </Route>
             <Route
               element={
-                <Suspense fallback={<Spinner />}>
+                <Suspense>
                   <ProtectedRoute>
                     <AppLayout />
                   </ProtectedRoute>
