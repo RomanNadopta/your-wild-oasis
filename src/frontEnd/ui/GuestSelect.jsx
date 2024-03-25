@@ -10,7 +10,6 @@ import { GiSittingDog } from 'react-icons/gi';
 import { useLocation } from 'react-router-dom';
 
 const QuestsContainer = styled.div`
-  /* margin-top: 7rem; */
   margin-top: 3rem;
 
   position: relative;
