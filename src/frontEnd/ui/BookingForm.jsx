@@ -234,7 +234,6 @@ function BookingForm() {
     }
   }, [startDate, endDate]);
 
-  // if (isLoading) return;
   const house = cabins.find((cabin) => cabin.name === originalName);
 
   const {
