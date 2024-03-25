@@ -10,7 +10,7 @@ import GlobalStyles from './styles/GlobalStyles';
 // import Bookings from './admin/pages/Bookings';
 // import Cabins from './admin/pages/Cabins';
 // import Account from './admin/pages/Account';
-import Login from './admin/pages/Login';
+// import Login from './admin/pages/Login';
 import PageNotFound from './admin/pages/PageNotFound';
 // import Settings from './admin/pages/Settings';
 // import Users from './admin/pages/Users';
@@ -50,7 +50,7 @@ const Users = lazy(() => import('./admin/pages/Users'));
 const Account = lazy(() => import('./admin/pages/Account'));
 const Booking = lazy(() => import('./admin/pages/Booking'));
 const Checkin = lazy(() => import('./admin/pages/Checkin'));
-
+const Login = lazy(() => import('./admin/pages/Login'));
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -71,6 +71,7 @@ function App() {
           <ScrollToTop />
           <Routes>
             <Route index element={<Navigate replace to='home' />} />
+            <Route path='home' element={<Home />}></Route>
             <Route
               element={
                 <Suspense>
@@ -80,7 +81,6 @@ function App() {
                 </Suspense>
               }
             >
-              <Route path='home' element={<Home />}></Route>
               <Route path='about' element={<About />}></Route>
               <Route path='leadership' element={<Leadership />}></Route>
               <Route path='/policies' element={<Privacy />}></Route>
@@ -112,8 +112,8 @@ function App() {
               <Route path='settings' element={<Settings />} />
               <Route path='users' element={<Users />} />
               <Route path='login' element={<Login />} />
-              <Route path='*' element={<PageNotFound />} />
             </Route>
+            <Route path='*' element={<PageNotFound />} />
           </Routes>
         </BrowserRouter>
         <Toaster
