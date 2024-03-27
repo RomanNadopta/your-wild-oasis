@@ -36,7 +36,7 @@ const HouseDetail = styled.li`
     margin-right: 5px;
   }
   @media (min-width: 1200px) {
-    font-size: 2rem;
+    font-size: 1.8rem;
     svg {
       font-size: 4rem;
     }
@@ -49,7 +49,8 @@ const HouseDescription = styled.div`
     padding: 1rem 0;
   }
   @media (min-width: 1200px) {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    line-height: 1.8;
   }
 `;
 

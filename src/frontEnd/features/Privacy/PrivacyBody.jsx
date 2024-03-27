@@ -27,7 +27,7 @@ const NavigationLink = styled.ol`
     padding: 4rem 10rem;
     a {
       padding-left: 4rem;
-      font-size: 2.4rem;
+      font-size: 2rem;
     }
   }
 `;
@@ -143,7 +143,8 @@ const StyledList = styled.div`
 
     p,
     li {
-      font-size: 2rem;
+      font-size: 1.8rem;
+      line-height: 1.8;
     }
 
     ol {
@@ -156,7 +157,7 @@ const StyledList = styled.div`
       }
 
       li::before {
-        font-size: 2.4rem;
+        font-size: 2rem;
       }
     }
 
@@ -191,7 +192,7 @@ const StyledButton = styled.div`
   }
   @media (min-width: 900px) {
     .back-to {
-      font-size: 2rem;
+      /* font-size: 1.8rem; */
     }
   }
 `;

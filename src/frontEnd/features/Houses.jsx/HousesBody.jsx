@@ -13,14 +13,14 @@ import {
   encodeForUrl,
   formatCurrency,
 } from '../../../utils/helpers';
-// import { cabins } from '../../../data/data-cabins';
 
 import { useCabins } from '../../../admin/features/cabins/useCabins';
 import { useCities } from '../ExplorePage/useCities';
 
 const commonTextStyle = css`
   @media (min-width: 1200px) {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    line-height: 1.8;
   }
 `;
 

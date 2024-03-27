@@ -23,7 +23,7 @@ const styledDatePickers = {
     }
 
     .react-datepicker__day {
-      padding-top: 5px;
+      padding-top: 6px;
       width: 40px;
       height: 30px;
     }
@@ -113,6 +113,10 @@ const CustomDatePicker = styled.div`
     @media (min-width: 900px) {
       width: 400px;
     }
+  }
+
+  .react-datepicker__children-container {
+    width: 14.8rem;
   }
 
   .react-datepicker__view-calendar-icon input {

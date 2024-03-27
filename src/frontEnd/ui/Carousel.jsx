@@ -32,7 +32,7 @@ const StyledCarousel = styled.section`
     padding-bottom: 10rem;
 
     a {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
     }
   }
 `;
@@ -47,7 +47,7 @@ const StyledTitle = styled.h2`
 
   @media (min-width: 1200px) {
     font-weight: 300;
-    font-size: 6rem;
+    font-size: 5rem;
     width: 52%;
   }
 `;
@@ -79,9 +79,9 @@ const StyledCabinTitle = styled.h4`
 `;
 
 const StyledDescription = styled.p`
-  /* font-style: italic; */
+  font-size: 1.4rem;
   @media (min-width: 1200px) {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
 `;
 const Wrapper = styled.div`

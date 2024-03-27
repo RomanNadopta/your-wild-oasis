@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 const LinkText = styled.span`
   @media (min-width: 1200px) {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
 `;
 

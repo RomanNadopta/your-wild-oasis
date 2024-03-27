@@ -74,9 +74,16 @@ const ClearDateBtn = styled.button`
   display: inline-flex;
   justify-content: end;
   padding: 1rem 2rem;
+
+  font-size: 1.4rem;
+
   border-radius: 4px;
   border: 1px solid var(--color-grey-400);
   background: white;
+
+  @media (min-width: 1200px) {
+    font-size: 1.6rem;
+  }
 `;
 
 const LabelWrapper = styled.div`
@@ -165,7 +172,7 @@ const AverageNight = styled.p`
 `;
 
 function BookingForm() {
-  const { isLoading, cabins } = useCabins();
+  const { cabins } = useCabins();
 
   const { name } = useParams();
   const originalName = decodeFromUrl(name);

@@ -48,10 +48,10 @@ const ArticleWrapper = styled.div`
 
 const PageTitle = styled.h2`
   text-align: center;
-
+  hyphens: none;
   @media (min-width: 1200px) {
     font-weight: 300;
-    font-size: 6rem;
+    font-size: 5rem;
   }
 `;
 
@@ -59,15 +59,21 @@ const PageSubtitle = styled.h4`
   text-align: center;
 
   @media (min-width: 1200px) {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
   }
 `;
 
 const StyledParagraph = styled.p`
   padding: 2rem 0rem;
+
+  font-size: 1.4rem;
+  line-height: 1.8;
+  word-spacing: 0.14rem;
   font-style: italic;
+
   @media (min-width: 1200px) {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    line-height: 1.8;
   }
 `;
 

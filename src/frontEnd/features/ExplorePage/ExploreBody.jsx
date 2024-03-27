@@ -4,12 +4,12 @@ import { decodeFromUrl } from '../../../utils/helpers';
 
 import Container from '../../ui/BodyContainer';
 import Carousel from '../../ui/Carousel';
-import { cabins } from '../../../data/data-cabins';
 import { ExploreButton } from '../../ui/ExploreButton';
 import Accordion from '../../ui/Accordion';
 import styled from 'styled-components';
 import PageHeading from '../../ui/PageHeading';
 import { useCities } from './useCities';
+import { useCabins } from '../../../admin/features/cabins/useCabins';
 
 import { useExplores } from './useExplores';
 
@@ -20,10 +20,12 @@ const StyledAccordion = styled.section`
 function ExplorePageBody() {
   const { id } = useParams();
   const originalTitle = decodeFromUrl(id);
+  const { isLoading: cabinsLoading, cabins } = useCabins();
   const { isLoading, cities } = useCities();
   const { isLoading: exploreLoading, explores } = useExplores();
 
-  if (isLoading || exploreLoading) return;
+  if (isLoading || exploreLoading || cabinsLoading) return;
+
   let explore;
   explore = explores.find((item) => item.title === originalTitle);
 

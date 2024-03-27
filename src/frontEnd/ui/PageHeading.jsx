@@ -7,7 +7,7 @@ const PageHeading = styled.h1`
     css`
       @media (min-width: 1200px) {
         font-weight: 300;
-        font-size: 6rem;
+        font-size: 5rem;
       }
     `}
   ${(props) =>
